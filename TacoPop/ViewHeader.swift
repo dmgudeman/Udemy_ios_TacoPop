@@ -1,5 +1,5 @@
 //
-//  HeaderView.swift
+//  ViewHeader.swift
 //  TacoPop
 //
 //  Created by David Gudeman on 8/18/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HeaderView: UIView, DropShadow {
+class ViewHeader: UIView, DropShadow {
   
     
 }

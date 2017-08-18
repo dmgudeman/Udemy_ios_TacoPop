@@ -10,21 +10,23 @@ import UIKit
 
 class MainVC: UIViewController, DataServiceDelegate {
     
-    @IBOutlet weak var headerView: HeaderView!
-    @IBOutlet weak var collectionVIew: UICollectionView!
+    @IBOutlet weak var headerView: ViewHeader!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     var ds: DataService = DataService.instance
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        ds  = DataService.instance
         ds.delegate = self
         ds.loadDeliciousTacoData()
         
-        collectionVIew.delegate = self
-        collectionVIew.dataSource = self
+        collectionView.delegate = self
+        collectionView.dataSource = self
         
         headerView.addDropShadow()
+        collectionView.register(TacoCell.self)
     }
     
     func deliciousTacoDataLoaded() {
@@ -33,7 +35,7 @@ class MainVC: UIViewController, DataServiceDelegate {
 
 }
 
-extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource{
+extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return ds.tacoArray.count
     }
@@ -43,12 +45,14 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource{
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Taco Cell", for: indexPath) as? TacoCell{
-            cell.configureCell(taco: ds.tacoArray[indexPath.row])
-            return cell
-        }
-        return UICollectionViewCell()
-    }
+     
+        let cell = collectionView.dequeueReusableCell(forIndexPath: indexPath) as TacoCell
+        cell.configureCell(taco: ds.tacoArray[indexPath.row])
+        print(cell.taco.productName)
+        print( " I'm HHHHHHere")
+        return cell        }
+    
+    
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         

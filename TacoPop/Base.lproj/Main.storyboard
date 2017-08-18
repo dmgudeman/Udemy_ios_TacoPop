@@ -35,7 +35,7 @@
                                     <constraint firstItem="1pi-My-Mwd" firstAttribute="centerY" secondItem="Oba-1i-QIN" secondAttribute="centerY" id="zEM-wO-o6l"/>
                                 </constraints>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="GTF-OI-BPt">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="GTF-OI-BPt" userLabel="CollectionView">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="YC8-52-wGD">
                                     <size key="itemSize" width="50" height="50"/>
@@ -58,6 +58,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="collectionVIew" destination="GTF-OI-BPt" id="ptH-yC-LfB"/>
                         <outlet property="headerView" destination="Oba-1i-QIN" id="Qii-tT-u3G"/>
                     </connections>
                 </viewController>

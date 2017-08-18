@@ -13,6 +13,8 @@
 		710432BE1F4729EE00D3F697 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 710432BC1F4729EE00D3F697 /* LaunchScreen.storyboard */; };
 		710432C91F4729EE00D3F697 /* TacoPopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710432C81F4729EE00D3F697 /* TacoPopTests.swift */; };
 		710432DA1F472B7600D3F697 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710432D91F472B7600D3F697 /* MainVC.swift */; };
+		710432DC1F47327300D3F697 /* DropShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710432DB1F47327300D3F697 /* DropShadow.swift */; };
+		710432DE1F4733A100D3F697 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710432DD1F4733A100D3F697 /* HeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		710432C81F4729EE00D3F697 /* TacoPopTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TacoPopTests.swift; sourceTree = "<group>"; };
 		710432CA1F4729EF00D3F697 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		710432D91F472B7600D3F697 /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		710432DB1F47327300D3F697 /* DropShadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropShadow.swift; sourceTree = "<group>"; };
+		710432DD1F4733A100D3F697 /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +114,7 @@
 			children = (
 				710432B71F4729EE00D3F697 /* Main.storyboard */,
 				710432BC1F4729EE00D3F697 /* LaunchScreen.storyboard */,
+				710432DD1F4733A100D3F697 /* HeaderView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -133,6 +138,7 @@
 		710432D71F472A6B00D3F697 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				710432DB1F47327300D3F697 /* DropShadow.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -248,7 +254,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				710432B41F4729EE00D3F697 /* AppDelegate.swift in Sources */,
+				710432DC1F47327300D3F697 /* DropShadow.swift in Sources */,
 				710432DA1F472B7600D3F697 /* MainVC.swift in Sources */,
+				710432DE1F4733A100D3F697 /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

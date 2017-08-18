@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -34,12 +35,26 @@
                                     <constraint firstItem="1pi-My-Mwd" firstAttribute="centerY" secondItem="Oba-1i-QIN" secondAttribute="centerY" id="zEM-wO-o6l"/>
                                 </constraints>
                             </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="GTF-OI-BPt">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="YC8-52-wGD">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="GTF-OI-BPt" secondAttribute="trailing" id="AYW-XV-9FQ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="GTF-OI-BPt" secondAttribute="bottom" constant="20" id="aZe-Fo-NZ8"/>
                             <constraint firstItem="Oba-1i-QIN" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="bNB-Df-OlE"/>
                             <constraint firstAttribute="trailing" secondItem="Oba-1i-QIN" secondAttribute="trailing" id="fru-yg-8jM"/>
                             <constraint firstItem="Oba-1i-QIN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="kA1-Qe-ASm"/>
+                            <constraint firstItem="GTF-OI-BPt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="sGg-oe-rlD"/>
+                            <constraint firstItem="GTF-OI-BPt" firstAttribute="top" secondItem="Oba-1i-QIN" secondAttribute="bottom" constant="20" id="yLO-5H-89V"/>
                         </constraints>
                     </view>
                     <connections>

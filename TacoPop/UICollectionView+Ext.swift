@@ -11,8 +11,6 @@ import UIKit
 extension UICollectionView {
     func register<T: UICollectionViewCell>(_:T.Type) where T:ReusableView, T: NibLoadableView {
         let nib = UINib(nibName: T.nibName, bundle: nil)
-        print("UICollection View register \(T.nibName)")
-        print("UICollection View register \(T.reuseIdentifier)")
         register(nib, forCellWithReuseIdentifier: T.reuseIdentifier)
     }
     

@@ -10,10 +10,8 @@ import UIKit
 
 protocol ReusableView: class {}
 
-
 extension ReusableView where Self: UIView {
     static var reuseIdentifier: String {
-         print(String(describing: self))
         return String(describing: self)
     }
 }

@@ -21,20 +21,24 @@ class MainVC: UIViewController, DataServiceDelegate {
         ds  = DataService.instance
         ds.delegate = self
         ds.loadDeliciousTacoData()
+        ds.tacoArray.shuffle()
         
         collectionView.delegate = self
         collectionView.dataSource = self
         
         headerView.addDropShadow()
         
-        // old way
+///////////////////// old way //////////////////////////////////////////////////////
 //        let nib = UINib(nibName: "TacoCell", bundle: nil)
 //        collectionView.register(nib, forCellWithReuseIdentifier: "TacoCell")
+////////////////////////////////////////////////////////////////////////////////////
+        
         collectionView.register(TacoCell.self)
     }
     
     func deliciousTacoDataLoaded() {
         print("Delicious Taco Data Loaded!")
+        collectionView.reloadData()
     }
 
 }
@@ -49,17 +53,28 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-     
+        
+///////////////// method to use if protocols were not implemented////////////////////////////////
+//        if let cell =
+//            collectionView.dequeueReusableCell(withReuseIdentifier: "TacoCell", for: indexPath) as? TacoCell {
+//            cell.configureCell(taco: ds.tacoArray[indexPath.row])
+//            return cell
+//        }
+//        return UICollectionViewCell()
+/////////////////////////////////////////////////////////////////////////////////////////////////
+                
         let cell = collectionView.dequeueReusableCell(forIndexPath: indexPath) as TacoCell
         cell.configureCell(taco: ds.tacoArray[indexPath.row])
         print(cell.taco.productName)
-        print( " I'm HHHHHHere")
-        return cell        }
+        return cell
+    }
     
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        if let cell = collectionView.cellForItem(at: indexPath) as? TacoCell {
+        cell.shake()
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView,
